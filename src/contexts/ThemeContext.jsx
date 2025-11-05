@@ -1,10 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import { Children, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 
 export const ThemeContext = createContext();
 
-export const ThemeProvider = ({ Children }) => {
+export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     const saved = localStorage.getItem("theme");
     return saved || "light";
@@ -17,7 +17,7 @@ export const ThemeProvider = ({ Children }) => {
   };
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <div className={`app ${theme}`}>{Children}</div>
+      <div className={`app ${theme}`}>{children}</div>
     </ThemeContext.Provider>
   );
 };

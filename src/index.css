@@ -1,0 +1,19 @@
+.app.light {
+  background: #ffffff;
+  color: #000000;
+  transition: all 0.3s ease;
+}
+
+.app.dark {
+  background: #1a1a1a;
+  color: #ffffff;
+  transition: all 0.3s ease;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}

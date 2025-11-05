@@ -1,10 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import { Children, useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export const UserContext = createContext();
 
-export const UserProvider = ({ Children }) => {
+export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   const login = (name) => {
@@ -15,7 +15,7 @@ export const UserProvider = ({ Children }) => {
   };
   return (
     <UserContext.Provider value={{ user, login, logout }}>
-      {Children}
+      {children}
     </UserContext.Provider>
   );
 };

@@ -1,10 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
-import { Children, useState } from "react";
+import { useState } from "react";
 import { createContext } from "react";
 
 export const NotificationContext = createContext();
 
-export const NotificationProvider = ({ Children }) => {
+export const NotificationProvider = ({ children }) => {
   const [messages, setMessages] = useState(null);
   const notify = (text, timeout = 3000) => {
     setMessages(text);
@@ -12,7 +12,7 @@ export const NotificationProvider = ({ Children }) => {
   };
   return (
     <NotificationContext.Provider value={{ messages, notify }}>
-      {Children}
+      {children}
     </NotificationContext.Provider>
   );
 };
